@@ -42,6 +42,7 @@
     [self.wbView reload];
 }
 
+#pragma mark 右侧按钮点击事件
 - (void)navigationBarRightButtonClick {
     SecondViewController *secVC = [[SecondViewController alloc] init];
     [self.navigationController pushViewController:secVC animated:YES];

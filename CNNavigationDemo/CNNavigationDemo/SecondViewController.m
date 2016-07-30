@@ -34,18 +34,30 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark 自定义设置Bar
 - (void)navigationBarSetting {
     [super navigationBarSetting];
     
+    /**
+     *  设置Title
+     */
     self.navigationBar.title = @"第二页";
+    /**
+     *  代理回调
+     */
     self.navigationBar.delegate = self;
+    /**
+     *  是否是网页
+     */
     self.navigationBar.isWebSite = YES;
 }
 
+#pragma mark 左侧按钮点击事件
 - (void)navigationBarLeftButtonClick {
     [self.wbView goBack];
 }
 
+#pragma mark 关闭按钮点击事件
 - (void)navigationBarCloseButtonClick {
     [self.navigationController popViewControllerAnimated:YES];
 }

@@ -1,5 +1,7 @@
 # CNNavigationBar
-`自定义NavigationBar`
+`自定义NavigationBar`,在介绍之前，先来看看效果图:
+	![预览图片1](1.png)
+	![预览图片1](2.png)
 
 ### CNNavigationBar
 自定义的NavigationBar，其包含的功能用 

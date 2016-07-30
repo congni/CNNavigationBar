@@ -24,7 +24,7 @@
                                            kCNNavigationBarLeftTitleFont: [UIFont systemFontOfSize:14.0],
                                            kCNNavigationBarLeftTitleColor: [UIColor whiteColor],
                                            kCNNavigationBarLeftIconImage: [UIImage imageNamed:@"image.bundle/NavigationBarImage_back_icon"],
-                                           kCNNavigationBarBackgroundColor: [UIColor greenColor]};
+                                           kCNNavigationBarBackgroundColor: [UIColor grayColor]};
     [CNBaseViewController globalSettingNavigationBar:barSettingDictionary];
     
     

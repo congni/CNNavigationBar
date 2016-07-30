@@ -20,7 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationBar.title = @"标题";
-    self.navigationBar.isHiddenLeftButton = YES;
+    self.navigationBar.isHiddenLeftButton = NO;
     self.navigationBar.delegate = self;
     
     UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -33,7 +33,6 @@
     [self.navigationBar rightButtonForText:@"GO"];
     
     self.wbView = [[UIWebView alloc] initWithFrame:self.contentView.bounds];
-    self.wbView.delegate = self;
      [self.wbView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://twitter.com"]]];
     [self.contentView addSubview:self.wbView];
 }

@@ -7,6 +7,8 @@
 //
 
 #import "CNNavigationBar.h"
+#import "CNIconLabel.h"
+
 
 @implementation CNNavigationBar
 @synthesize title = _title;

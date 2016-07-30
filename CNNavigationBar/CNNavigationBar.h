@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CNIconLabel.h"
+
 
 /**
  *  左侧按钮模式
@@ -44,6 +44,7 @@ typedef NS_ENUM(NSInteger, LeftButtonStyle) {
 @end
 
 
+@class CNIconLabel;
 @interface CNNavigationBar : UIView {
     /**
      *  titleLabel

@@ -1,0 +1,416 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC379B16D9FD81E800ACC603 /* Pods_CNNavigationDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1204BA49D5DC208ADE8E0258 /* Pods_CNNavigationDemo.framework */; };
+		DA6612171D4B4E3F00B61A37 /* CNBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6612161D4B4E3F00B61A37 /* CNBaseViewController.m */; };
+		DA66124A1D4C459A00B61A37 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6612491D4C459A00B61A37 /* SecondViewController.m */; };
+		DAAC543E1D4AEC200086A3D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAC543D1D4AEC200086A3D2 /* main.m */; };
+		DAAC54411D4AEC200086A3D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAC54401D4AEC200086A3D2 /* AppDelegate.m */; };
+		DAAC54441D4AEC200086A3D2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAC54431D4AEC200086A3D2 /* ViewController.m */; };
+		DAAC54471D4AEC200086A3D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAAC54451D4AEC200086A3D2 /* Main.storyboard */; };
+		DAAC54491D4AEC200086A3D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAAC54481D4AEC200086A3D2 /* Assets.xcassets */; };
+		DAAC544C1D4AEC200086A3D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAAC544A1D4AEC200086A3D2 /* LaunchScreen.storyboard */; };
+		DAAC54561D4AEC2C0086A3D2 /* CNNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAC54551D4AEC2C0086A3D2 /* CNNavigationBar.m */; };
+		DAAC54581D4AEF810086A3D2 /* Image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DAAC54571D4AEF810086A3D2 /* Image.bundle */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1204BA49D5DC208ADE8E0258 /* Pods_CNNavigationDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CNNavigationDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		665735A3F5351F45971C4B3F /* Pods-CNNavigationDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNNavigationDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CNNavigationDemo/Pods-CNNavigationDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		DA6612151D4B4E3F00B61A37 /* CNBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNBaseViewController.h; sourceTree = "<group>"; };
+		DA6612161D4B4E3F00B61A37 /* CNBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNBaseViewController.m; sourceTree = "<group>"; };
+		DA6612481D4C459A00B61A37 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		DA6612491D4C459A00B61A37 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		DAAC54391D4AEC200086A3D2 /* CNNavigationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNNavigationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAAC543D1D4AEC200086A3D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DAAC543F1D4AEC200086A3D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DAAC54401D4AEC200086A3D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DAAC54421D4AEC200086A3D2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DAAC54431D4AEC200086A3D2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DAAC54461D4AEC200086A3D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DAAC54481D4AEC200086A3D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DAAC544B1D4AEC200086A3D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DAAC544D1D4AEC200086A3D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAAC54541D4AEC2C0086A3D2 /* CNNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNNavigationBar.h; sourceTree = "<group>"; };
+		DAAC54551D4AEC2C0086A3D2 /* CNNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNNavigationBar.m; sourceTree = "<group>"; };
+		DAAC54571D4AEF810086A3D2 /* Image.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Image.bundle; sourceTree = "<group>"; };
+		EC834851058441D01CA66918 /* Pods-CNNavigationDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNNavigationDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CNNavigationDemo/Pods-CNNavigationDemo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DAAC54361D4AEC200086A3D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC379B16D9FD81E800ACC603 /* Pods_CNNavigationDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		90FCC43BD20AC3F960621677 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1204BA49D5DC208ADE8E0258 /* Pods_CNNavigationDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DAAC54301D4AEC200086A3D2 = {
+			isa = PBXGroup;
+			children = (
+				DAAC54531D4AEC2C0086A3D2 /* CNNavigationBar */,
+				DAAC543B1D4AEC200086A3D2 /* CNNavigationDemo */,
+				DAAC543A1D4AEC200086A3D2 /* Products */,
+				E97780ADF64FB2E826B961F2 /* Pods */,
+				90FCC43BD20AC3F960621677 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DAAC543A1D4AEC200086A3D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DAAC54391D4AEC200086A3D2 /* CNNavigationDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DAAC543B1D4AEC200086A3D2 /* CNNavigationDemo */ = {
+			isa = PBXGroup;
+			children = (
+				DAAC543F1D4AEC200086A3D2 /* AppDelegate.h */,
+				DAAC54401D4AEC200086A3D2 /* AppDelegate.m */,
+				DAAC54421D4AEC200086A3D2 /* ViewController.h */,
+				DAAC54431D4AEC200086A3D2 /* ViewController.m */,
+				DAAC54451D4AEC200086A3D2 /* Main.storyboard */,
+				DAAC54481D4AEC200086A3D2 /* Assets.xcassets */,
+				DAAC544A1D4AEC200086A3D2 /* LaunchScreen.storyboard */,
+				DAAC544D1D4AEC200086A3D2 /* Info.plist */,
+				DAAC543C1D4AEC200086A3D2 /* Supporting Files */,
+				DA6612481D4C459A00B61A37 /* SecondViewController.h */,
+				DA6612491D4C459A00B61A37 /* SecondViewController.m */,
+			);
+			path = CNNavigationDemo;
+			sourceTree = "<group>";
+		};
+		DAAC543C1D4AEC200086A3D2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DAAC543D1D4AEC200086A3D2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DAAC54531D4AEC2C0086A3D2 /* CNNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				DAAC54541D4AEC2C0086A3D2 /* CNNavigationBar.h */,
+				DAAC54551D4AEC2C0086A3D2 /* CNNavigationBar.m */,
+				DAAC54571D4AEF810086A3D2 /* Image.bundle */,
+				DA6612151D4B4E3F00B61A37 /* CNBaseViewController.h */,
+				DA6612161D4B4E3F00B61A37 /* CNBaseViewController.m */,
+			);
+			name = CNNavigationBar;
+			path = ../CNNavigationBar;
+			sourceTree = "<group>";
+		};
+		E97780ADF64FB2E826B961F2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				665735A3F5351F45971C4B3F /* Pods-CNNavigationDemo.debug.xcconfig */,
+				EC834851058441D01CA66918 /* Pods-CNNavigationDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DAAC54381D4AEC200086A3D2 /* CNNavigationDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAAC54501D4AEC200086A3D2 /* Build configuration list for PBXNativeTarget "CNNavigationDemo" */;
+			buildPhases = (
+				76222E228183EC48D0B491DE /* 📦 Check Pods Manifest.lock */,
+				DAAC54351D4AEC200086A3D2 /* Sources */,
+				DAAC54361D4AEC200086A3D2 /* Frameworks */,
+				DAAC54371D4AEC200086A3D2 /* Resources */,
+				11FBD842324A954E072B7D38 /* 📦 Embed Pods Frameworks */,
+				475E386D1BB0A99A3AC79482 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CNNavigationDemo;
+			productName = CNNavigationDemo;
+			productReference = DAAC54391D4AEC200086A3D2 /* CNNavigationDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DAAC54311D4AEC200086A3D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "葱泥";
+				TargetAttributes = {
+					DAAC54381D4AEC200086A3D2 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = DAAC54341D4AEC200086A3D2 /* Build configuration list for PBXProject "CNNavigationDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DAAC54301D4AEC200086A3D2;
+			productRefGroup = DAAC543A1D4AEC200086A3D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DAAC54381D4AEC200086A3D2 /* CNNavigationDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DAAC54371D4AEC200086A3D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAAC544C1D4AEC200086A3D2 /* LaunchScreen.storyboard in Resources */,
+				DAAC54491D4AEC200086A3D2 /* Assets.xcassets in Resources */,
+				DAAC54471D4AEC200086A3D2 /* Main.storyboard in Resources */,
+				DAAC54581D4AEF810086A3D2 /* Image.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11FBD842324A954E072B7D38 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CNNavigationDemo/Pods-CNNavigationDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		475E386D1BB0A99A3AC79482 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CNNavigationDemo/Pods-CNNavigationDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76222E228183EC48D0B491DE /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DAAC54351D4AEC200086A3D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA66124A1D4C459A00B61A37 /* SecondViewController.m in Sources */,
+				DAAC54441D4AEC200086A3D2 /* ViewController.m in Sources */,
+				DAAC54411D4AEC200086A3D2 /* AppDelegate.m in Sources */,
+				DA6612171D4B4E3F00B61A37 /* CNBaseViewController.m in Sources */,
+				DAAC54561D4AEC2C0086A3D2 /* CNNavigationBar.m in Sources */,
+				DAAC543E1D4AEC200086A3D2 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DAAC54451D4AEC200086A3D2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAAC54461D4AEC200086A3D2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DAAC544A1D4AEC200086A3D2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAAC544B1D4AEC200086A3D2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DAAC544E1D4AEC200086A3D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DAAC544F1D4AEC200086A3D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DAAC54511D4AEC200086A3D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 665735A3F5351F45971C4B3F /* Pods-CNNavigationDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CNNavigationDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ixdtech.CNNavigationDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DAAC54521D4AEC200086A3D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC834851058441D01CA66918 /* Pods-CNNavigationDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CNNavigationDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ixdtech.CNNavigationDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DAAC54341D4AEC200086A3D2 /* Build configuration list for PBXProject "CNNavigationDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAAC544E1D4AEC200086A3D2 /* Debug */,
+				DAAC544F1D4AEC200086A3D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAAC54501D4AEC200086A3D2 /* Build configuration list for PBXNativeTarget "CNNavigationDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAAC54511D4AEC200086A3D2 /* Debug */,
+				DAAC54521D4AEC200086A3D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DAAC54311D4AEC200086A3D2 /* Project object */;
+}

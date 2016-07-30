@@ -1,0 +1,19 @@
+PODS:
+  - CNIconLabel (1.0.2)
+  - NJKWebViewProgress (0.2.3):
+    - NJKWebViewProgress/Core (= 0.2.3)
+    - NJKWebViewProgress/ProgressView (= 0.2.3)
+  - NJKWebViewProgress/Core (0.2.3)
+  - NJKWebViewProgress/ProgressView (0.2.3)
+
+DEPENDENCIES:
+  - CNIconLabel (~> 1.0.2)
+  - NJKWebViewProgress
+
+SPEC CHECKSUMS:
+  CNIconLabel: baab427b1b4420e7611ba102095810192350d9d9
+  NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
+
+PODFILE CHECKSUM: db96c5806a2b1efe48ce7a6db668b379d8a58f73
+
+COCOAPODS: 1.0.0

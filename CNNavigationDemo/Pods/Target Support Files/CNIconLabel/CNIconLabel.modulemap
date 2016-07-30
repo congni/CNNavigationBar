@@ -1,0 +1,6 @@
+framework module CNIconLabel {
+  umbrella header "CNIconLabel-umbrella.h"
+
+  export *
+  module * { export * }
+}

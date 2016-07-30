@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'CNNavigationBar'
-  s.version      = '1.0.2'
+  s.version      = '1.0.3'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.homepage     = 'https://github.com/congni/CNNavigationBar.git'
   s.authors      = { "葱泥" => "983818495@qq.com" }

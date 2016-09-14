@@ -26,18 +26,6 @@
 
 
 #pragma mark -LifeCycle
-#pragma mark 初始化initWithFrame
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    
-    if (self) {
-        [self createUI];
-        [self initData];
-    }
-    
-    return self;
-}
-
 #pragma mark 初始化init
 -(instancetype)init {
     self = [super init];
@@ -51,7 +39,7 @@
 }
 
 #pragma mark layoutSubviews
-- (void)layoutSubviews {
+- (void)layoutSize {
     [_titleLabel sizeToFit];
     
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
@@ -97,10 +85,10 @@
     }
     
     if (self.isWebSite && _closeButton && self.isShowCloseButton) {
-        float closeButtonPositionY = (self.navigationBarHeight - _closeButton.frame.size.height) / 2.0 + statueSize.height;
         _closeButton.titleLabel.font = self.closeButtonTitleFont;
         [_closeButton setTitleColor:self.closeButtonTitleColor forState:UIControlStateNormal];
         [_closeButton sizeToFit];
+        float closeButtonPositionY = (self.navigationBarHeight - _closeButton.frame.size.height) / 2.0 + statueSize.height;
         
         _closeButton.frame = CGRectMake(_leftIconLabel.frame.origin.x + _leftIconLabel.frame.size.width + self.spaceOffset.vertical, closeButtonPositionY, _closeButton.frame.size.width, _closeButton.frame.size.height);
     }
@@ -133,6 +121,7 @@
     
     _rightButtonsMulArray = [[NSMutableArray alloc] init];
     self.navigationBarHeight = 49.0;
+    [self layoutSize];
 }
 
 #pragma mark 创建UI
@@ -221,7 +210,7 @@
     
     [_rightButtonsMulArray addObject:_rightButton];
     
-    [self layoutSubviews];
+    [self layoutSize];
 }
 
 #pragma mark 设置右侧按钮为文字按钮
@@ -239,13 +228,13 @@
     
     [_rightButtonsMulArray addObject:_rightButton];
     
-    [self layoutSubviews];
+    [self layoutSize];
 }
 
 #pragma mark 添加按钮
 - (void)addRightButton:(UIButton *)addButton {
     [_rightButtonsMulArray addObject:addButton];
-    [self layoutSubviews];
+    [self layoutSize];
 }
 
 #pragma mark 移除按钮
@@ -254,7 +243,7 @@
         [_rightButtonsMulArray removeObject:button];
     }
     
-    [self layoutSubviews];
+    [self layoutSize];
 }
 
 #pragma mark 关闭按钮点击
@@ -277,6 +266,8 @@
     [_closeButton sizeToFit];
     [self addSubview:_closeButton];
     [_closeButton addTarget:self action:@selector(webSiteClose) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self layoutSize];
 }
 
 - (BOOL)isWebSite {
@@ -306,6 +297,7 @@
     _title = title;
     
     _titleLabel.text = title;
+    [self layoutSize];
 }
 
 - (void)setTitleLabelFont:(UIFont *)titleLabelFont {

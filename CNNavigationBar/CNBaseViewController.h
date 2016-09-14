@@ -22,7 +22,9 @@ static NSString *kCNNavigationBarSpaceOffset     = @"kCNNavigationBarSpaceOffset
 /**
  *  基础UIViewController类，其包含了自定义的NavigationBar和UI容器contentView
  */
-@interface CNBaseViewController : UIViewController
+@interface CNBaseViewController : UIViewController {
+    BOOL _isAnimationing;
+}
 
 /**
  *  自定义的NavigationBar
@@ -32,6 +34,8 @@ static NSString *kCNNavigationBarSpaceOffset     = @"kCNNavigationBarSpaceOffset
  *  UI容器contentView
  */
 @property (nonatomic, strong) UIView *contentView;
+
+@property (nonatomic, assign) CGRect contentFrame;
 
 /**
  *  设置NavigationBar(子类可以重写此方法)
@@ -44,5 +48,12 @@ static NSString *kCNNavigationBarSpaceOffset     = @"kCNNavigationBarSpaceOffset
  *  @param paramDictionary NavigationBar设定参数字典
  */
 + (void)globalSettingNavigationBar:(NSDictionary *)paramDictionary;
+
+/**
+ *  隐藏bar
+ *
+ *  @param isHiden 是否隐藏，如果YES，则隐藏bar，如果NO，则显示Bar
+ */
+- (void)hidenNavigationBar:(BOOL)isHiden;
 
 @end

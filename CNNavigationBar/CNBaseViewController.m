@@ -31,25 +31,18 @@ static NSDictionary *globalSettingDictionary = nil;
     return self;
 }
 
-#pragma mark viewWillAppear
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    [self.view addSubview:self.navigationBar];
-    [self.view addSubview:self.contentView];
-}
-
-#pragma mark viewWillLayoutSubviews
-- (void)viewWillLayoutSubviews {
-    float barHeight = [self.navigationBar navigationBarStatueHeight];
-    self.contentView.frame = CGRectMake(0, barHeight, self.view.frame.size.width, self.view.frame.size.height - barHeight);
-}
-
 #pragma mark viewDidLoad
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self initSubView];
+    [self.view addSubview:self.contentView];
+    [self.view addSubview:self.navigationBar];
+    
+    float barHeight = [self.navigationBar navigationBarStatueHeight];
+    self.contentView.frame = CGRectMake(0, barHeight, self.view.frame.size.width, self.view.frame.size.height - barHeight);
+    self.contentFrame = self.contentView.bounds;
+    
+    self.automaticallyAdjustsScrollViewInsets = false;
 }
 
 #pragma mark -Private Method
@@ -57,17 +50,19 @@ static NSDictionary *globalSettingDictionary = nil;
 - (void)initSubView {
     if (self.navigationBar == nil) {
         self.navigationBar = [[CNNavigationBar alloc] init];
-        self.contentView = [[UIView alloc] init];
         [self navigationBarSetting];
+        
+        self.contentView = [[UIView alloc] init];
+        [self.contentView setAutoresizingMask:(UIViewAutoresizingFlexibleWidth|
+                                               UIViewAutoresizingFlexibleHeight)];
+        
+        [self.contentView setAutoresizesSubviews:YES];
     }
-    
-    float barHeight = [self.navigationBar navigationBarStatueHeight];
-    self.contentView.frame = CGRectMake(0, barHeight, self.view.frame.size.width, self.view.frame.size.height - barHeight);
 }
 
 #pragma mark bar设置
 - (void)navigationBarSetting {
-    self.navigationBar.title = @"标题";
+    self.navigationBar.title = @"标题1111";
     
     if (globalSettingDictionary) {
         self.navigationBar.backgroundColor      = globalSettingDictionary[kCNNavigationBarBackgroundColor];
@@ -88,6 +83,42 @@ static NSDictionary *globalSettingDictionary = nil;
 #pragma mark 全局设置Bar
 + (void)globalSettingNavigationBar:(NSDictionary *)paramDictionary {
     globalSettingDictionary = paramDictionary;
+}
+//
+- (void)hidenNavigationBar:(BOOL)isHiden {
+    if (_isAnimationing) {
+        return;
+    }
+    
+    if (isHiden) {
+        if (self.navigationBar.frame.origin.y == -self.navigationBar.frame.size.height) {
+            return;
+        }
+        
+        self.contentView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        _isAnimationing = YES;
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            self.navigationBar.frame = CGRectMake(0, -self.navigationBar.frame.size.height, self.navigationBar.frame.size.width, self.navigationBar.frame.size.height);
+        } completion:^(BOOL finished) {
+            _isAnimationing = NO;
+        }];
+    } else {
+        if (self.navigationBar.frame.origin.y < 0) {
+            if (self.navigationBar.frame.origin.y == 0.0) {
+                return;
+            }
+            
+            _isAnimationing = YES;
+            [UIView animateWithDuration:0.5 animations:^{
+                self.navigationBar.frame = CGRectMake(0, 0.0, self.navigationBar.frame.size.width, self.navigationBar.frame.size.height);
+                
+            } completion:^(BOOL finished) {
+                _isAnimationing = NO;
+                self.contentView.frame = CGRectMake(0.0, self.navigationBar.frame.size.height, self.contentView.frame.size.width, self.view.frame.size.height - self.navigationBar.frame.size.height);
+            }];
+        }
+    }
 }
 
 @end

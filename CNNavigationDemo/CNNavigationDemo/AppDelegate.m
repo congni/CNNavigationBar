@@ -34,7 +34,7 @@
     /**
      *  隐藏系统自带的Bar
      */
-    navigationVC.navigationBarHidden = YES;
+//    navigationVC.navigationBarHidden = YES;
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = navigationVC;

@@ -11,9 +11,17 @@
 
 
 @implementation CNNavigationBar
+@synthesize titleType = _titleType;
 @synthesize title = _title;
 @synthesize titleLabelFont = _titleLabelFont;
 @synthesize titleLabelColor = _titleLabelColor;
+@synthesize detailTitle = _detailTitle;
+@synthesize detailTitleLabelFont = _detailTitleLabelFont;
+@synthesize detailTitleLableColor = _detailTitleLableColor;
+@synthesize detailImage = _detailImage;
+@synthesize detailTitleType = _detailTitleType;
+@synthesize spaceForTitle = _spaceForTitle;
+@synthesize spaceForLoadingImage = _spaceForLoadingImage;
 @synthesize leftButtonTitleColor = _leftButtonTitleColor;
 @synthesize leftButtonTitleFont = _leftButtonTitleFont;
 @synthesize leftButtonIconImage = _leftButtonIconImage;
@@ -25,7 +33,7 @@
 @synthesize progress = _progress;
 
 
-#pragma mark -LifeCycle
+#pragma mark - LifeCycle
 #pragma mark 初始化init
 -(instancetype)init {
     self = [super init];
@@ -40,10 +48,9 @@
 
 #pragma mark layoutSubviews
 - (void)layoutSize {
-    [_titleLabel sizeToFit];
-    
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     CGSize statueSize = [UIApplication sharedApplication].statusBarFrame.size;
+    self.frame = CGRectMake(0, 0, screenSize.width, [self navigationBarStatueHeight]);
     float titleLabelPositionX = self.spaceOffset.vertical;
     float titleLabelWidth = screenSize.width - titleLabelPositionX * 2;
     float contentViewWidth = self.spaceOffset.vertical;
@@ -72,12 +79,44 @@
         contentViewWidth = titleLabelPositionX;
     }
     
-    titleLabelPositionX = _rightButtonView.frame.size.width > titleLabelPositionX ? _rightButtonView.frame.size.width : titleLabelPositionX;
+    titleLabelWidth = _titleLabel.frame.size.width;
+    titleLabelPositionX = (screenSize.width - titleLabelWidth) / 2.0;
     float titleLabelPositionY = (self.navigationBarHeight - _titleLabel.frame.size.height) / 2.0 + statueSize.height;
-    titleLabelWidth = screenSize.width - titleLabelPositionX - contentViewWidth;
+    [_titleLabel labelWithText:self.title image:self.titleImage];
+    
+    if (self.detailTitleType != CNNavigationBarDetailTitleTypeNone) {
+        titleLabelPositionY = statueSize.height;
+        [_detailLable sizeToFit];
+        float frontWidth = 0.0;
+        float frontX = 0.0;
+        float detailWidth = _detailLable.frame.size.width;
+        float detailHeight = _detailLable.frame.size.height;
+        float detailLabelX = (screenSize.width - detailWidth) / 2.0;
+        float detailLabelY = _titleLabel.frame.size.height + titleLabelPositionY;
+        float totalTitleHeight = _titleLabel.frame.size.height + self.spaceForTitle + detailHeight;
+        titleLabelPositionY = (self.navigationBarHeight - totalTitleHeight) / 2.0 + statueSize.height;
+        detailLabelY = titleLabelPositionY + _titleLabel.frame.size.height + self.spaceForTitle;
+        
+        if (self.detailTitleType == CNNavigationBarDetailTitleTypeImage) {
+            frontWidth = self.detailImage.size.width;
+            detailWidth = frontWidth + self.spaceForLoadingImage + detailWidth;
+            frontX = (screenSize.width - detailWidth) / 2.0;
+            detailLabelX = frontX + frontWidth + self.spaceForLoadingImage;
+            
+            _detailImageView.frame = CGRectMake(frontX, detailLabelY, frontWidth, self.detailImage.size.height);
+        } else if (self.detailTitleType == CNNavigationBarDetailTitleTypeLoading) {
+            frontWidth = _detailLable.frame.size.height;
+            detailWidth = frontWidth + self.spaceForLoadingImage + detailWidth;
+            frontX = (screenSize.width - detailWidth) / 2.0;
+            detailLabelX = frontX + frontWidth + self.spaceForLoadingImage;
+            
+            _detailLoading.frame = CGRectMake(frontX, detailLabelY, _detailLable.frame.size.height, _detailLable.frame.size.height);
+        }
+        
+        _detailLable.frame = CGRectMake(detailLabelX, detailLabelY, detailWidth, detailHeight);
+    }
     
     _titleLabel.frame =CGRectMake(titleLabelPositionX, titleLabelPositionY, titleLabelWidth, _titleLabel.frame.size.height);
-    self.frame = CGRectMake(0, 0, screenSize.width, [self navigationBarStatueHeight]);
     
     if (self.isWebSite && _progressView) {
          _progressView.frame = CGRectMake(0, self.frame.size.height - 1.0, self.frame.size.width, 0.1);
@@ -94,12 +133,19 @@
     }
 }
 
-#pragma mark -Private Method
+#pragma mark - Private Method
 #pragma mark 初始化设置
 - (void)initData {
+    self.titleType = CNNavigationBarTitleTypeNormal;
     self.title = @"标题";
     self.titleLabelFont = [UIFont systemFontOfSize:12.0];
     self.titleLabelColor = [UIColor whiteColor];
+    
+    self.detailTitleType = CNNavigationBarDetailTitleTypeNone;
+    self.detailTitleLableColor = [UIColor whiteColor];
+    self.detailTitleLabelFont = [UIFont systemFontOfSize:10.0];
+    self.spaceForTitle = 5.0;
+    self.spaceForLoadingImage = 5.0;
     
     self.leftButtonTitleColor = [UIColor whiteColor];
     self.leftButtonTitleFont = [UIFont systemFontOfSize:12.0];
@@ -126,10 +172,9 @@
 
 #pragma mark 创建UI
 - (void)createUI {
-    _titleLabel = [[UILabel alloc] init];
-    _titleLabel.textColor = self.titleLabelColor;
-    _titleLabel.font = self.titleLabelFont;
-    _titleLabel.textAlignment = NSTextAlignmentCenter;
+    _titleLabel = [[CNIconLabel alloc] init];
+    _titleLabel.textPositionAdjustmentOffset = UIOffsetMake(0.0, 4.0);
+    _titleLabel.iconStyle = IconPositionStyle_Right;
     [self addSubview:_titleLabel];
 }
 
@@ -192,7 +237,7 @@
     }
 }
 
-#pragma mark -Public Method
+#pragma mark - Public Method
 #pragma mark bar高度
 - (float)navigationBarStatueHeight {
     CGSize statueSize = [UIApplication sharedApplication].statusBarFrame.size;
@@ -253,7 +298,14 @@
     }
 }
 
-#pragma mark -GET/SET
+#pragma mark 标题点击
+- (void)navigationBarTitleClick {
+    if ([self.delegate respondsToSelector:@selector(navigationBarTitleClick)]) {
+        [self.delegate navigationBarTitleClick];
+    }
+}
+
+#pragma mark - GET/SET
 - (void)setIsWebSite:(BOOL)isWebSite {
     _isWebSite = isWebSite;
     
@@ -293,23 +345,112 @@
     return _progress;
 }
 
+- (void)setTitleType:(CNNavigationBarTitleType)titleType {
+    _titleType = titleType;
+    
+    if (titleType == CNNavigationBarTitleTypeNormal) {
+        
+    } else if (titleType == CNNavigationBarTitleTypeEnableClick) {
+        
+    }
+    
+    switch (titleType) {
+        case CNNavigationBarTitleTypeNormal:
+            [_titleLabel removeTarget:self action:@selector(navigationBarTitleClick) forControlEvents:UIControlEventTouchUpInside];
+            break;
+        case CNNavigationBarTitleTypeEnableClick:
+            [_titleLabel addTarget:self action:@selector(navigationBarTitleClick) forControlEvents:UIControlEventTouchUpInside];
+            break;
+        case CNNavigationBarTitleTypeEnableImageLeft:
+            _titleLabel.iconStyle = IconPositionStyle_Left;
+            
+            [_titleLabel addTarget:self action:@selector(navigationBarTitleClick) forControlEvents:UIControlEventTouchUpInside];
+            break;
+        case CNNavigationBarTitleTypeEnableImageRight:
+            _titleLabel.iconStyle = IconPositionStyle_Right;
+            
+            [_titleLabel addTarget:self action:@selector(navigationBarTitleClick) forControlEvents:UIControlEventTouchUpInside];
+            break;
+        default:
+            break;
+    }
+}
+
 - (void)setTitle:(NSString *)title {
     _title = title;
     
-    _titleLabel.text = title;
+    [_titleLabel updateText:title];
     [self layoutSize];
 }
 
 - (void)setTitleLabelFont:(UIFont *)titleLabelFont {
     _titleLabelFont = titleLabelFont;
     
-    _titleLabel.font = titleLabelFont;
+    _titleLabel.textLabelFont = titleLabelFont;
 }
 
 - (void)setTitleLabelColor:(UIColor *)titleLabelColor {
     _titleLabelColor = titleLabelColor;
     
-    _titleLabel.textColor = titleLabelColor;
+    _titleLabel.textLabelColor = titleLabelColor;
+}
+
+- (void)setDetailTitle:(NSString *)detailTitle {
+    _detailTitle = detailTitle;
+    
+    _detailLable.text = detailTitle;
+    [self layoutSize];
+}
+
+- (void)setDetailTitleLabelFont:(UIFont *)detailTitleLabelFont {
+    _detailTitleLabelFont = detailTitleLabelFont;
+    
+    _detailLable.font = detailTitleLabelFont;
+}
+
+- (void)setDetailTitleLableColor:(UIColor *)detailTitleLableColor {
+    _detailTitleLableColor = detailTitleLableColor;
+    
+    _detailLable.textColor = detailTitleLableColor;
+}
+
+- (void)setDetailTitleType:(CNNavigationBarDetailTitleType)detailTitleType {
+    _detailTitleType = detailTitleType;
+    
+    if (detailTitleType == CNNavigationBarDetailTitleTypeNone) {
+        [_detailLoading stopAnimating];
+        [_detailLoading removeFromSuperview];
+        [_detailImageView removeFromSuperview];
+        [_detailLable removeFromSuperview];
+        
+        _detailLoading = nil;
+        _detailImageView = nil;
+        _detailLable = nil;
+    } else if (detailTitleType == CNNavigationBarDetailTitleTypeImage) {
+        if (!_detailImageView) {
+            _detailImageView = [[UIImageView alloc] init];
+            _detailImageView.image = self.detailImage;
+            [self addSubview:_detailImageView];
+        }
+    } else if (detailTitleType == CNNavigationBarDetailTitleTypeLoading) {
+        if (!_detailLoading) {
+            _detailLoading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+            _detailLoading.transform = CGAffineTransformMakeScale(0.6, 0.6) ;
+            [_detailLoading startAnimating];
+            [self addSubview: _detailLoading];
+        }
+    }
+    
+    if (detailTitleType != CNNavigationBarDetailTitleTypeNone) {
+        if (!_detailLable) {
+            _detailLable = [[UILabel alloc] init];
+            _detailLable.font = self.detailTitleLabelFont;
+            _detailLable.textColor = self.detailTitleLableColor;
+            [self addSubview: _detailLable];
+        }
+    }
+    
+    [self layoutSize];
 }
 
 - (void)setLeftButtonIconImage:(UIImage *)leftButtonIconImage {

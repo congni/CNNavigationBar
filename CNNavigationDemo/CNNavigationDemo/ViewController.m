@@ -22,6 +22,8 @@
     self.navigationBar.title = @"标121212题";
     self.navigationBar.isHiddenLeftButton = YES;
     self.navigationBar.delegate = self;
+    self.navigationBar.detailTitleType = CNNavigationBarDetailTitleTypeLoading;
+    self.navigationBar.detailTitle = @"11:11 同步";
     
     [self.navigationBar rightButtonForText:@"GO"];
     

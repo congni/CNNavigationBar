@@ -23,6 +23,37 @@ typedef NS_ENUM(NSInteger, LeftButtonStyle) {
     LeftButtonStyle_AllWithOutText    = 2
 };
 
+
+/**
+ 详情标题
+
+ - CNNavigationBarDetailTitleTypeNone: 无详情标题
+ - CNNavigationBarDetailTitleTypeNormal: 正常纯文字标题
+ - CNNavigationBarDetailTitleTypeLoading: 加载+文字状态
+ - CNNavigationBarDetailTitleTypeImage: 图片+文字状态
+ */
+typedef NS_ENUM(NSInteger, CNNavigationBarDetailTitleType) {
+    CNNavigationBarDetailTitleTypeNone,
+    CNNavigationBarDetailTitleTypeNormal,
+    CNNavigationBarDetailTitleTypeLoading,
+    CNNavigationBarDetailTitleTypeImage,
+};
+
+/**
+ 标题
+
+ - CNNavigationBarTitleTypeNormal: 正常纯文本
+ - CNNavigationBarTitleTypeEnableClick: 可点击
+ - CNNavigationBarTitleTypeEnableImageLeft: 可点击，并且左侧有图片
+ - CNNavigationBarTitleTypeEnableImageRight: 可点击，并且右侧有图片
+ */
+typedef NS_ENUM(NSInteger, CNNavigationBarTitleType) {
+    CNNavigationBarTitleTypeNormal,
+    CNNavigationBarTitleTypeEnableClick,
+    CNNavigationBarTitleTypeEnableImageLeft,
+    CNNavigationBarTitleTypeEnableImageRight,
+};
+
 /**
  *  代理回调
  */
@@ -41,6 +72,11 @@ typedef NS_ENUM(NSInteger, LeftButtonStyle) {
  */
 - (void)navigationBarCloseButtonClick;
 
+/**
+ 标题点击回调
+ */
+- (void)navigationBarTitleClick;
+
 @end
 
 
@@ -49,7 +85,13 @@ typedef NS_ENUM(NSInteger, LeftButtonStyle) {
     /**
      *  titleLabel
      */
-    UILabel *_titleLabel;
+    CNIconLabel *_titleLabel;
+    // 详情标题
+    UILabel *_detailLable;
+    // 详情标题 loading
+    UIActivityIndicatorView *_detailLoading;
+    // 详情标题 图片
+    UIImageView *_detailImageView;
     /**
      *  右侧按钮存放容器
      */
@@ -82,6 +124,10 @@ typedef NS_ENUM(NSInteger, LeftButtonStyle) {
 @property (nonatomic, weak) id<CNNavigationBarDelegate>delegate;
 
 /**
+ 标题类型
+ */
+@property (nonatomic, assign) CNNavigationBarTitleType titleType;
+/**
  *  标题
  */
 @property (nonatomic, strong) NSString *title;
@@ -93,6 +139,39 @@ typedef NS_ENUM(NSInteger, LeftButtonStyle) {
  *  标题颜色
  */
 @property (nonatomic, strong) UIColor *titleLabelColor;
+/**
+ 标题图片
+ */
+@property (nonatomic, strong) UIImage *titleImage;
+/**
+ 详情标题类型
+ */
+@property (nonatomic, assign) CNNavigationBarDetailTitleType detailTitleType;
+/**
+ 详情标题
+ */
+@property (nonatomic, strong) NSString *detailTitle;
+/**
+ 详情标题字体
+ */
+@property (nonatomic, strong) UIFont *detailTitleLabelFont;
+/**
+ 详情标题颜色
+ */
+@property (nonatomic, strong) UIColor *detailTitleLableColor;
+/**
+ 详情标题图片
+ */
+@property (nonatomic, strong) UIImage *detailImage;
+
+/**
+ loading、image类型下与文字间距
+ */
+@property (nonatomic, assign) float spaceForLoadingImage;
+/**
+ 与title间距
+ */
+@property (nonatomic, assign) float spaceForTitle;
 /**
  *  左侧按钮字体颜色
  */

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'CNNavigationBar'
-  s.version      = '1.0.3'
+  s.version      = '1.0.4'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.homepage     = 'https://github.com/congni/CNNavigationBar.git'
   s.authors      = { "葱泥" => "983818495@qq.com" }
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.source       =  { :git => "https://github.com/congni/CNNavigationBar.git", :tag => s.version.to_s }
   s.requires_arc = true
   s.source_files = 'CNNavigationBar/*'
-  s.public_header_files = 'CNNavigationBar/*.{h}'
+  s.public_header_files = 'CNNavigationBar/CNNavigationBarDefine.h'
 
   s.dependency 'CNIconLabel'
 end

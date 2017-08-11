@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34D505661F3D942F002766E0 /* CNBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D505621F3D942F002766E0 /* CNBaseViewController.m */; };
+		34D505671F3D942F002766E0 /* CNNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D505641F3D942F002766E0 /* CNNavigationBar.m */; };
+		34D505681F3D942F002766E0 /* Image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 34D505651F3D942F002766E0 /* Image.bundle */; };
 		AC379B16D9FD81E800ACC603 /* Pods_CNNavigationDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1204BA49D5DC208ADE8E0258 /* Pods_CNNavigationDemo.framework */; };
-		DA6612171D4B4E3F00B61A37 /* CNBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6612161D4B4E3F00B61A37 /* CNBaseViewController.m */; };
 		DA66124A1D4C459A00B61A37 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6612491D4C459A00B61A37 /* SecondViewController.m */; };
 		DAAC543E1D4AEC200086A3D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAC543D1D4AEC200086A3D2 /* main.m */; };
 		DAAC54411D4AEC200086A3D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAC54401D4AEC200086A3D2 /* AppDelegate.m */; };
@@ -16,15 +18,17 @@
 		DAAC54471D4AEC200086A3D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAAC54451D4AEC200086A3D2 /* Main.storyboard */; };
 		DAAC54491D4AEC200086A3D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAAC54481D4AEC200086A3D2 /* Assets.xcassets */; };
 		DAAC544C1D4AEC200086A3D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAAC544A1D4AEC200086A3D2 /* LaunchScreen.storyboard */; };
-		DAAC54561D4AEC2C0086A3D2 /* CNNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAC54551D4AEC2C0086A3D2 /* CNNavigationBar.m */; };
-		DAAC54581D4AEF810086A3D2 /* Image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DAAC54571D4AEF810086A3D2 /* Image.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1204BA49D5DC208ADE8E0258 /* Pods_CNNavigationDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CNNavigationDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34D505611F3D942F002766E0 /* CNBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNBaseViewController.h; sourceTree = "<group>"; };
+		34D505621F3D942F002766E0 /* CNBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNBaseViewController.m; sourceTree = "<group>"; };
+		34D505631F3D942F002766E0 /* CNNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNNavigationBar.h; sourceTree = "<group>"; };
+		34D505641F3D942F002766E0 /* CNNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNNavigationBar.m; sourceTree = "<group>"; };
+		34D505651F3D942F002766E0 /* Image.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Image.bundle; sourceTree = "<group>"; };
+		34D505691F3D964B002766E0 /* CNNavigationBarDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNNavigationBarDefine.h; sourceTree = "<group>"; };
 		665735A3F5351F45971C4B3F /* Pods-CNNavigationDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNNavigationDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CNNavigationDemo/Pods-CNNavigationDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		DA6612151D4B4E3F00B61A37 /* CNBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNBaseViewController.h; sourceTree = "<group>"; };
-		DA6612161D4B4E3F00B61A37 /* CNBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNBaseViewController.m; sourceTree = "<group>"; };
 		DA6612481D4C459A00B61A37 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		DA6612491D4C459A00B61A37 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		DAAC54391D4AEC200086A3D2 /* CNNavigationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNNavigationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,9 +41,6 @@
 		DAAC54481D4AEC200086A3D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAAC544B1D4AEC200086A3D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAAC544D1D4AEC200086A3D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAAC54541D4AEC2C0086A3D2 /* CNNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNNavigationBar.h; sourceTree = "<group>"; };
-		DAAC54551D4AEC2C0086A3D2 /* CNNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNNavigationBar.m; sourceTree = "<group>"; };
-		DAAC54571D4AEF810086A3D2 /* Image.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Image.bundle; sourceTree = "<group>"; };
 		EC834851058441D01CA66918 /* Pods-CNNavigationDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNNavigationDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CNNavigationDemo/Pods-CNNavigationDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,6 +56,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34D505601F3D942F002766E0 /* CNNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				34D505611F3D942F002766E0 /* CNBaseViewController.h */,
+				34D505621F3D942F002766E0 /* CNBaseViewController.m */,
+				34D505631F3D942F002766E0 /* CNNavigationBar.h */,
+				34D505641F3D942F002766E0 /* CNNavigationBar.m */,
+				34D505651F3D942F002766E0 /* Image.bundle */,
+				34D505691F3D964B002766E0 /* CNNavigationBarDefine.h */,
+			);
+			name = CNNavigationBar;
+			path = ../CNNavigationBar;
+			sourceTree = "<group>";
+		};
 		90FCC43BD20AC3F960621677 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -66,7 +81,7 @@
 		DAAC54301D4AEC200086A3D2 = {
 			isa = PBXGroup;
 			children = (
-				DAAC54531D4AEC2C0086A3D2 /* CNNavigationBar */,
+				34D505601F3D942F002766E0 /* CNNavigationBar */,
 				DAAC543B1D4AEC200086A3D2 /* CNNavigationDemo */,
 				DAAC543A1D4AEC200086A3D2 /* Products */,
 				E97780ADF64FB2E826B961F2 /* Pods */,
@@ -106,19 +121,6 @@
 				DAAC543D1D4AEC200086A3D2 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		DAAC54531D4AEC2C0086A3D2 /* CNNavigationBar */ = {
-			isa = PBXGroup;
-			children = (
-				DAAC54541D4AEC2C0086A3D2 /* CNNavigationBar.h */,
-				DAAC54551D4AEC2C0086A3D2 /* CNNavigationBar.m */,
-				DAAC54571D4AEF810086A3D2 /* Image.bundle */,
-				DA6612151D4B4E3F00B61A37 /* CNBaseViewController.h */,
-				DA6612161D4B4E3F00B61A37 /* CNBaseViewController.m */,
-			);
-			name = CNNavigationBar;
-			path = ../CNNavigationBar;
 			sourceTree = "<group>";
 		};
 		E97780ADF64FB2E826B961F2 /* Pods */ = {
@@ -195,7 +197,7 @@
 				DAAC544C1D4AEC200086A3D2 /* LaunchScreen.storyboard in Resources */,
 				DAAC54491D4AEC200086A3D2 /* Assets.xcassets in Resources */,
 				DAAC54471D4AEC200086A3D2 /* Main.storyboard in Resources */,
-				DAAC54581D4AEF810086A3D2 /* Image.bundle in Resources */,
+				34D505681F3D942F002766E0 /* Image.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,9 +258,9 @@
 			files = (
 				DA66124A1D4C459A00B61A37 /* SecondViewController.m in Sources */,
 				DAAC54441D4AEC200086A3D2 /* ViewController.m in Sources */,
+				34D505671F3D942F002766E0 /* CNNavigationBar.m in Sources */,
+				34D505661F3D942F002766E0 /* CNBaseViewController.m in Sources */,
 				DAAC54411D4AEC200086A3D2 /* AppDelegate.m in Sources */,
-				DA6612171D4B4E3F00B61A37 /* CNBaseViewController.m in Sources */,
-				DAAC54561D4AEC2C0086A3D2 /* CNNavigationBar.m in Sources */,
 				DAAC543E1D4AEC200086A3D2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

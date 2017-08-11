@@ -40,7 +40,7 @@ static NSString *kCNNavigationBarSpaceOffset     = @"kCNNavigationBarSpaceOffset
 /**
  *  设置NavigationBar(子类可以重写此方法)
  */
-- (void)navigationBarSetting;
+- (void)navigationBarSetting __attribute__ ((objc_requires_super));
 
 /**
  *  全局设置NavigationBar。(具体参数，可以参考源文件);
